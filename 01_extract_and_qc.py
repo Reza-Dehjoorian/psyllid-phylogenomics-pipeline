@@ -35,7 +35,7 @@ for zip_file in data_list:
         zip_path = os.path.join(target_dir, zip_file)
 
         mkdir_cmd = subprocess.run(['mkdir', '-p', dir_path], capture_output=True, text=True, check=True)
-        unzip_cmd = subprocess.run(['unzip', '-o', zip_path, '-d', dir_path], capture_output=True, text=True, check=True)
+        unzip_cmd = subprocess.run(['unzip', '-j', '-o', zip_path, '-d', dir_path], capture_output=True, text=True, check=True)
 
 
 # 3. Run FastQC on extracted reads using Apptainer
@@ -52,8 +52,8 @@ for file in data_list:
             print(f"Skipping FastQC for {file}: report already exists.")
             continue
 
-        r1 = os.path.join(out_dir, file.split('_')[0], 'unmapped_target_R1.fastq.gz')
-        r2 = os.path.join(out_dir, file.split('_')[0], 'unmapped_target_R2.fastq.gz')
+        r1 = os.path.join(out_dir, 'unmapped_target_R1.fastq.gz')
+        r2 = os.path.join(out_dir, 'unmapped_target_R2.fastq.gz')
 
         fastqc_cmd = subprocess.run(['apptainer', 'exec', fastqc_path, 'fastqc',
                                     r1, r2, '-o', out_dir], capture_output=True, text=True, check=True)
