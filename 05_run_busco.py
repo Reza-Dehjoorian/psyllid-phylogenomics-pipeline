@@ -1,5 +1,5 @@
 """
-Step 04: Genome Assembly Assessment (BUSCO)
+Step 05: Genome Assembly Assessment (BUSCO)
 Author: Reza Dehjoorian
 Description: Evaluates genome assembly completeness using BUSCO with the 
              Hemiptera lineage dataset inside an Apptainer container.
