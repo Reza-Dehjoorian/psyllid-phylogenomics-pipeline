@@ -11,7 +11,7 @@ import sys
 # 1. Parse and validate command-line arguments
 try:
     target_dir = os.path.abspath(sys.argv[1])
-    output_dir_protein = os.path.abspath(sys.argv[2]) if len(sys.argv) > 2 else os.path.join(os.getcwd(), 'orthologs_protein')
+    output_dir_protein = os.path.abspath(sys.argv[2])
 except IndexError:
     print("[ERROR] Usage: python 06_extract_protein_orthologs.py <target_directory> [output_directory]")
     sys.exit(1)
