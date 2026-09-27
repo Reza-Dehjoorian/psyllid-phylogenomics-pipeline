@@ -17,7 +17,7 @@ try:
 
 except (IndexError, FileNotFoundError): 
     print("[ERROR] Missing required arguments.")
-    print("Usage: python 04_run_busco.py <target_directory> <path_to_busco_sif> <path_to_lineage_dataset>")    
+    print("Usage: python 05_run_busco.py <target_directory> <path_to_busco_sif> <path_to_lineage_dataset>")    
     sys.exit(1)
 
 # 2. Locate scaffolds.fasta for each sample
