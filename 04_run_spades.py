@@ -11,7 +11,7 @@ import subprocess
 # 1. Parse and validate command-line arguments
 try:
     target_dir = os.path.abspath(sys.argv[1])
-    sif_path = os.path.abspath(sys.argv[2]) if len(sys.argv) > 2 else '/mnt/nfs/home/reza.dehjoorian/apps/spades.sif'
+    sif_path = os.path.abspath(sys.argv[2]) 
 except IndexError: 
     print('[ERROR] Invalid input: please provide target directory.')
     sys.exit(1)
